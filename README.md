@@ -3,6 +3,7 @@ A demo of an AWS Lambda service that performs CRUD on a DynamoDB table.  Using [
 
 This demo is based on a microservice skeleton we've built for [Stampr](https://github.com/stampr).
 
+***Video of getting started inaction:***
 [![Video of this README in action](http://img.youtube.com/vi/kFeWzsVAsKg/0.jpg)](http://www.youtube.com/watch?v=kFeWzsVAsKg "Deploying a simple DynamoDB CRUD service to AWS Lambda with betty")
 
 ## Getting started
