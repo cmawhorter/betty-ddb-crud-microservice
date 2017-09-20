@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "npm run init && npm run build",
+    "init": "npm run init:scripts && npm run init:config",
+    "init:scripts": "[ -L ./betty ] || ln -s ./node_modules/.bin/betty .",
+    "init:config": "cp -n ./env.json-template ./env-development.json; cp -n ./env.json-template ./env-testing.json; cp -n ./env.json-template ./env-staging.json; cp -n ./env.json-template ./env-production.json; exit 0",
+    "build": "./betty build",
+    "start": "./betty serve --watch",
+    "test": "npm run lint && ./node_modules/.bin/mocha -r ./test/lib/helper test",
+    "coverage": "./node_modules/.bin/nyc --reporter cobertura --report-dir shippable/codecoverage ./node_modules/.bin/mocha -r ./test/lib/helper test",
+    "lint:coverage": "npm run lint && npm run coverage",
+    "lint": "./node_modules/.bin/eslint ./src"
+  },
+  "dependencies": {
+    "dynogels": "^8.0.1",
+    "source-map-support": "^0.4.10"
+  },
+  "devDependencies": {
+    "aws-sdk": "*",
+    "babel-register": "*",
+    "bty": "^1.0.0-alpha.1",
+    "eslint": "^3.16.1",
+    "expect": "*",
+    "mocha": "*",
+    "nyc": "^10.1.2",
+    "rc": "^1.1.7",
+    "reify": "0.7.x"
+  }
+}

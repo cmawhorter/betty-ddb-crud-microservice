@@ -1,0 +1,10 @@
+{
+  "build": {
+    "unbundled": {
+      "joi": "*"
+    }
+  },
+  "aws": {
+    "global_policy": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  }
+}
